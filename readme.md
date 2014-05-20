@@ -1,5 +1,7 @@
 ### Symas Lightning Memory-Mapped Database (LMDB)
 
+[![Build Status](https://travis-ci.org/deephacks/lmdb.png?branch=master)](https://travis-ci.org/deephacks/lmdb)
+
 This project produces `liblmdb` library version 0.9.10 of the OpenLDAP project which is licensed under the [The OpenLDAP Public License](http://www.openldap.org/software/release/license.html).
 
 ### Using as a Maven Dependency
