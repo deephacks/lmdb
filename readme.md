@@ -11,13 +11,13 @@ Add one (or both) of the following dependency to your Maven `pom.xml`.
 
 <dependency>
     <groupId>org.deephacks.lmdb</groupId>
-    <artifactId>lmdbjni-linux64</artifactId>
+    <artifactId>lmdb-linux64</artifactId>
     <version>${version}</version>
 </dependency>
 
 <dependency>
     <groupId>org.deephacks.lmdb</groupId>
-    <artifactId>lmdbjni-osx64</artifactId>
+    <artifactId>lmdb-osx64</artifactId>
     <version>${version}</version>
 </dependency>
 ```
