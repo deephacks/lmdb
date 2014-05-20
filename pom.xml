@@ -121,8 +121,9 @@
   <profiles>
     <profile>
       <id>sign-artifacts</id>
+      <!-- fix different platforms -->
       <modules>
-        <module>lmdbjni-linux64</module>
+        <module>lmdb-linux64</module>
       </modules>
       <build>
         <plugins>
