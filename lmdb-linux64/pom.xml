@@ -30,9 +30,6 @@
             </goals>
             <configuration>
               <executable>make</executable>
-              <arguments>
-                <argument>clean</argument>
-              </arguments>
               <workingDirectory>src/main/native</workingDirectory>
             </configuration>
           </execution>
@@ -75,11 +72,11 @@
               <resources>
                 <resource>
                   <directory>${basedir}/../lmdb/src/main/native</directory>
-                  <filtering>true</filtering>
+                  <filtering>false</filtering>
                   <includes>
-                    <include>**/*.h</include>
-                    <include>**/*.a</include>
-                    <include>**/*.so</include>
+                    <include>**/lmdb.h</include>
+                    <include>**/liblmdb.a</include>
+                    <include>**/liblmdb.so</include>
                     <include>**/mdb_stat</include>
                     <include>**/mdb_copy</include>
                     <include>**/COPYRIGHT</include>
@@ -95,7 +92,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.3.1</version>
+        <version>2.4</version>
         <configuration>
           <classesDirectory>${basedir}/target</classesDirectory>
           <includes>
