@@ -1,0 +1,17 @@
+mtest
+mtest[23456]
+testdb
+mdb_copy
+mdb_stat
+*.a
+*.o
+*.so
+*[~#]
+*.bak
+*.orig
+*.rej
+core
+core.*
+valgrind.*
+man/
+html/
