@@ -23,33 +23,12 @@
         <executions>
           <execution>
             <id>build-native</id>
-            <phase>clean</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>make</executable>
-              <workingDirectory>src/main/native</workingDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2.1</version>
-        <executions>
-          <execution>
-            <id>build-native</id>
             <phase>compile</phase>
             <goals>
               <goal>exec</goal>
             </goals>
             <configuration>
               <executable>make</executable>
-              <arguments>
-                <argument>all</argument>
-              </arguments>
               <workingDirectory>${basedir}/../lmdb/src/main/native</workingDirectory>
             </configuration>
           </execution>
