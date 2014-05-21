@@ -122,7 +122,7 @@
       <id>sign-artifacts</id>
       <!-- fix different platforms -->
       <modules>
-        <module>lmdb-linux64</module>
+        <module>lmdb-osx64</module>
       </modules>
       <build>
         <plugins>
