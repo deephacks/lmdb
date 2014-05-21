@@ -3,8 +3,7 @@ mtest[23456]
 testdb
 mdb_copy
 mdb_stat
-*.a
-*.o
+*.[ao]
 *.so
 *[~#]
 *.bak
