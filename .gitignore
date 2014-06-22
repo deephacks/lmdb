@@ -4,6 +4,7 @@
 *.iml
 *.idea
 *.out
+*.exe
 .metadata
 .settings/
 target/
