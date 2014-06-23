@@ -176,6 +176,13 @@
         <module>lmdb-linux64</module>
       </modules>
     </profile>
+
+    <profile>
+      <id>win64</id>
+      <modules>
+        <module>lmdb-win64</module>
+      </modules>
+    </profile>
   </profiles>
 
   <distributionManagement>

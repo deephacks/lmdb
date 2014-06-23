@@ -17,6 +17,11 @@
 #include <time.h>
 #include "lmdb.h"
 
+#ifdef _WIN32
+#define srandom srand
+#define random rand
+#endif
+
 int main(int argc,char * argv[])
 {
 	int i = 0, j = 0, rc;

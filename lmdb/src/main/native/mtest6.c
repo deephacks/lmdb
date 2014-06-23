@@ -20,6 +20,11 @@
 #include <time.h>
 #include "lmdb.h"
 
+#ifdef _WIN32
+#define srandom srand
+#define random rand
+#endif
+
 char dkbuf[1024];
 
 int main(int argc,char * argv[])
