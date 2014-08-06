@@ -29,6 +29,18 @@
             </goals>
             <configuration>
               <executable>make</executable>
+              <arguments>
+                <!-- The stack options are necessary because we will try to link the object produced by this build with a non-GCC
+                     linker (i.e. the MS one), and using the stack protection stuff generates a use of 1 symbol which is made
+                     available by libgcc. Obviously this a non-started with the MS linker.
+
+                     The -ffunction-sections option is needed for a differen treason. If you try to control the object layout with
+                     mingw-w64 (I tried x86_64-4.9.0-posix-seh-rt_v3-rev2 and x86_64-4.9.1-win32-sjlj-rt_v3-rev0) then it seems to
+                     produce an unordered .pdata section and then you'll get LNK1223 from the MS linker. I guess the GNU linker
+                     doesn't care if the intermediate object files are badly formed? Using -ffunction-sections seems to work around
+                     this, albeit possibly at the cost of throwing away Howard's clever-clever ESECT code placement hacks. -->
+                <argument>XCFLAGS=-fno-stack-check -fno-stack-protector -mno-stack-arg-probe -ffunction-sections</argument>
+              </arguments>
               <workingDirectory>${basedir}/../lmdb/src/main/native</workingDirectory>
             </configuration>
           </execution>
