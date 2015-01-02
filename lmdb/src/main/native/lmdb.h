@@ -194,7 +194,7 @@ typedef int mdb_filehandle_t;
 	MDB_VERINT(MDB_VERSION_MAJOR,MDB_VERSION_MINOR,MDB_VERSION_PATCH)
 
 /** The release date of this library version */
-#define MDB_VERSION_DATE	"July 24, 2014"
+#define MDB_VERSION_DATE	"September 20, 2014"
 
 /** A stringifier for the version info */
 #define MDB_VERSTR(a,b,c,d)	"LMDB " #a "." #b "." #c ": (" d ")"
@@ -1410,7 +1410,10 @@ int  mdb_cursor_get(MDB_cursor *cursor, MDB_val *key, MDB_val *data,
 	 * <ul>
 	 *	<li>#MDB_CURRENT - replace the item at the current cursor position.
 	 *		The \b key parameter must still be provided, and must match it.
-	 *		So must \b data if using sorted duplicates (#MDB_DUPSORT).
+	 *		If using sorted duplicates (#MDB_DUPSORT) the data item must still
+	 *		sort into the same place. This is intended to be used when the
+	 *		new data is the same size as the old. Otherwise it will simply
+	 *		perform a delete of the old record followed by an insert.
 	 *	<li>#MDB_NODUPDATA - enter the new key/data pair only if it does not
 	 *		already appear in the database. This flag may only be specified
 	 *		if the database was opened with #MDB_DUPSORT. The function will
