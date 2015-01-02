@@ -5,11 +5,11 @@
   <parent>
     <groupId>org.deephacks.lmdb</groupId>
     <artifactId>lmdb-project</artifactId>
-    <version>0.1.2-SNAPSHOT</version>
+    <version>0.1.2</version>
   </parent>
 
   <artifactId>lmdb-linux64</artifactId>
-  <version>0.1.2-SNAPSHOT</version>
+  <version>0.1.2</version>
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
