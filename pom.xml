@@ -120,10 +120,6 @@
   <profiles>
     <profile>
       <id>sign-artifacts</id>
-      <!-- fix different platforms -->
-      <modules>
-        <module>lmdb-osx64</module>
-      </modules>
       <build>
         <plugins>
           <plugin>
