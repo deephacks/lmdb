@@ -6,7 +6,7 @@ This project produces `liblmdb` library version 0.9.14 of the OpenLDAP project w
 
 ### Using as a Maven Dependency
 
-Add one (or both) of the following dependency to your Maven `pom.xml`.
+Add one (or more) of the following dependency to your Maven `pom.xml`.
 
 ```xml
 
@@ -19,6 +19,18 @@ Add one (or both) of the following dependency to your Maven `pom.xml`.
 <dependency>
     <groupId>org.deephacks.lmdb</groupId>
     <artifactId>lmdb-osx64</artifactId>
+    <version>${version}</version>
+</dependency>
+
+<dependency>
+    <groupId>org.deephacks.lmdb</groupId>
+    <artifactId>lmdb-win64</artifactId>
+    <version>${version}</version>
+</dependency>
+
+<dependency>
+    <groupId>org.deephacks.lmdb</groupId>
+    <artifactId>lmdb-android</artifactId>
     <version>${version}</version>
 </dependency>
 ```
