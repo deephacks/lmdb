@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.deephacks.lmdb</groupId>
+    <artifactId>lmdb-project</artifactId>
+    <version>0.1.3-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>lmdb-android</artifactId>
+  <version>0.1.3-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>${project.artifactId}</name>
+  <description>lmdb</description>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <execution>
+            <id>build-native</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>make</executable>
+              <workingDirectory>${basedir}/../lmdb/src/main/native</workingDirectory>
+              <arguments>
+                <argument>CC=${basedir}/../lmdb/src/main/native/agcc</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/target/META-INF/native/${project.artifactId}</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/../lmdb/src/main/native</directory>
+                  <filtering>false</filtering>
+                  <includes>
+                    <include>**/lmdb.h</include>
+                    <include>**/liblmdb.a</include>
+                    <include>**/liblmdb.so</include>
+                    <include>**/mdb_stat</include>
+                    <include>**/mdb_copy</include>
+                    <include>**/COPYRIGHT</include>
+                    <include>**/LICENSE</include>
+                    <include>**/CHANGES</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <classesDirectory>${basedir}/target</classesDirectory>
+          <includes>
+            <include>META-INF/**</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

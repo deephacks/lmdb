@@ -1,0 +1,2 @@
+#!/bin/bash
+$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=$NDK/platforms/android-19/arch-arm -DMDB_DSYNC=O_SYNC $@
