@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.deephacks.lmdb</groupId>
   <artifactId>lmdb-project</artifactId>
-  <version>0.1.3</version>
+  <version>0.1.4-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>lmbd</name>
