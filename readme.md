@@ -4,6 +4,8 @@
 
 This project produces `liblmdb` library version 0.9.15 of the OpenLDAP project which is licensed under the [The OpenLDAP Public License](http://www.openldap.org/software/release/license.html).
 
+Source @ https://github.com/LMDB/lmdb.
+
 ### Using as a Maven Dependency
 
 Add one (or more) of the following dependency to your Maven `pom.xml`.
